@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>https://cdn.rawgit.com/KompiAjaib/kompi-html/master/disqus_amp2.html</title><link rel="stylesheet" type="text/css" href="disqusamp_files/viewsource.css"></head><body contextmenu="actions" id="viewsource" class="highlight" style="-moz-tab-size: 4"><pre id="line1"><span></span><span title="Start tag seen without seeing a doctype first. Expected “&lt;!DOCTYPE html&gt;”." class="error">&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">disqus_thread</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line2"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
+<span id="line3"></span>window.addEventListener('message', receiveMessage, false);
+<span id="line4"></span>function receiveMessage(event) {
+<span id="line5"></span>	if (event.data) {
+<span id="line6"></span>		var msg;
+<span id="line7"></span>		try {
+<span id="line8"></span>			msg = JSON.parse(event.data);
+<span id="line9"></span>		} catch (err) {
+<span id="line10"></span>			// Do nothing
+<span id="line11"></span>		}
+<span id="line12"></span>		if (!msg)
+<span id="line13"></span>			return false;
+<span id="line14"></span>
+<span id="line15"></span>		if (msg.name === 'resize') {
+<span id="line16"></span>			window.parent.postMessage({
+<span id="line17"></span>			  sentinel: 'amp',
+<span id="line18"></span>			  type: 'embed-size',
+<span id="line19"></span>			  height: msg.data.height
+<span id="line20"></span>			}, '*');
+<span id="line21"></span>		}
+<span id="line22"></span>	}
+<span id="line23"></span>}
+<span id="line24"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line25"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
+<span id="line26"></span>function getQueryVariable(variable) {
+<span id="line27"></span>	var query = window.location.search.substring(1);
+<span id="line28"></span>	var vars = query.split("&amp;");
+<span id="line29"></span>	for (var i=0;i</span><span>&lt;v</span><span>ars.length;i++) {
+<span id="line30"></span>		var pair = vars[i].split("=");
+<span id="line31"></span>		if(pair[0] == variable){return pair[1];}
+<span id="line32"></span>	}
+<span id="line33"></span>	return(false);
+<span id="line34"></span>}
+<span id="line35"></span>var disqus_config = function () { 
+<span id="line36"></span>	this.page.url = getQueryVariable("url");
+<span id="line37"></span>};
+<span id="line38"></span>(function() {
+<span id="line39"></span>	var d = document, s = d.createElement('script');
+<span id="line40"></span>	s.src = '//' + getQueryVariable("shortname") + '.disqus.com/embed.js';
+<span id="line41"></span>	s.setAttribute('data-timestamp', +new Date());
+<span id="line42"></span>	(d.head || d.body).appendChild(s);
+<span id="line43"></span>})();
+<span id="line44"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line45"></span></span></pre><menu id="actions" type="context"><menuitem accesskey="L" label="Go to Line…" id="goToLine"></menuitem><menuitem type="checkbox" label="Wrap Long Lines" id="wrapLongLines"></menuitem><menuitem checked="true" type="checkbox" label="Syntax Highlighting" id="highlightSyntax"></menuitem></menu></body></html>
