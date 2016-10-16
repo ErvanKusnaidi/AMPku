@@ -103,16 +103,23 @@ function getQueryVariable(variable) {
 var labelArray = [],
     relatedPostConfig = {
 		homePage: getQueryVariable("url"),
-        numPosts: 4,
+        numPosts: 6,
         summaryLength: 100,
         widgetStyle: 2,
         callBack: function() {
             var $container = $('#' + this.containerId + ' > ul'),
                 $list = $container.find('li'),
-                innerHeight = $list.first().height(),
-                outerHeight = $list.first().outerHeight(true);
+                 
             // Container & list height setup
-           
+            $container.css({
+                "height": outerHeight * $list.length / 2,
+                "overflow": "hidden"
+            });
+            $list.css({
+                "height": innerHeight,
+                "overflow": "hidden"
+            });
+            newsTicker();
         }
     };
 </script>
