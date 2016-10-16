@@ -39,7 +39,6 @@ a:hover {color:#0379C4}
 }
 
 /* Style 2 */
-.related-post-style-2 ul {height:auto;}
 .related-post-style-2,
 .related-post-style-2 li {
   margin:0;
@@ -115,11 +114,11 @@ var labelArray = [],
             // Container & list height setup
             $container.css({
                 "height": outerHeight * $list.length / 2,
-               
+               "overflow": "hidden"
             });
             $list.css({
                 "height": innerHeight,
-                "overflow": "hidden"
+                "overflow": ""
             });
         }
     };
