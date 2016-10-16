@@ -106,7 +106,7 @@ var labelArray = [],
         summaryLength: 100,
         widgetStyle: 2,
         callBack: function() {
-            var $container = $('#' + this.containerId + ' > ul'),
+            var $container = $('#' + this.containerId ),
                 $list = $container.find('li'),
                 innerHeight = $list.first().height(),
                 outerHeight = $list.first().outerHeight(true);
