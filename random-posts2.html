@@ -32,12 +32,14 @@ a:hover {color:#0379C4}
   font-size:16px;
 }
 .related-post h4 {
-  font-size:20px;
+  font-size:17px;
   margin:0 0 10px;
+ text-transform:uppercase;
   font-weight:500;
 }
 
 /* Style 2 */
+.related-post-style-2 ul {height:auto;}
 .related-post-style-2,
 .related-post-style-2 li {
   margin:0;
@@ -106,7 +108,7 @@ var labelArray = [],
         summaryLength: 100,
         widgetStyle: 2,
         callBack: function() {
-            var $container = $('#' + this.containerId ),
+            var $container = $('#' + this.containerId + ' > ul'),
                 $list = $container.find('li'),
                 innerHeight = $list.first().height(),
                 outerHeight = $list.first().outerHeight(true);
