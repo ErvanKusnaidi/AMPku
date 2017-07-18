@@ -1,4 +1,4 @@
-var disqus_shortname="USERNAME";
+var disqus_shortname="tipsbloggaptek";
 var disqus_url = disqus_blogger_current_url;
 
 (function () {
