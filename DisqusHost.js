@@ -1,20 +1,25 @@
-<div id="disqus_thread"></div>
-<script>
+var disqus_shortname="USERNAME";
+var disqus_url = disqus_blogger_current_url;
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://tipsbloggaptek.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
+(function () {
+    "use strict";
+    var get_comment_block = function () {
+        var block = document.getElementById('comments');
+        if (!block) {
+            block = document.getElementById('disqus-blogger-comment-block');
+        }
+        return block;
+    };
+    var comment_block = get_comment_block();
+    if (!!comment_block) {
+        var disqus_div = document.createElement('div');
+        disqus_div.id = 'disqus_thread';
+        comment_block.innerHTML = '';
+        comment_block.appendChild(disqus_div);
+        comment_block.style.display = 'block';
+        var dsq = document.createElement('script');
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.body).appendChild(dsq);
+    }
 })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
